@@ -39,8 +39,8 @@ public class FmpXMLColumn {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("FmpXMLColumn[");
-		sb.append("colId=").append(colId);
-		sb.append("columnName=").append("columnName").append(", ");
+		sb.append("colId=").append(colId).append(", ");
+		sb.append("columnName=").append(columnName).append(", ");
 		sb.append("FmpXMLColumnData[ ");
 		for (FmpXMLColumnData colData : columnDatas) {
 			sb.append(colData.toString());
