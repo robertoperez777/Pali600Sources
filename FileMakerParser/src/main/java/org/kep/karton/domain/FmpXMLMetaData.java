@@ -19,7 +19,7 @@ public class FmpXMLMetaData {
 		this.metaDataFields = metaDataFields;
 	}
 	
-	public void addToMetaDataField(FmpXMLMetaDataField metaDataField) {
+	public void addToMetaDataFields(FmpXMLMetaDataField metaDataField) {
 		this.metaDataFields.add(metaDataField);
 	}
 	

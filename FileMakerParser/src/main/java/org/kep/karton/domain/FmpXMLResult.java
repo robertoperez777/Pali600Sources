@@ -7,6 +7,7 @@ public class FmpXMLResult {
 	private FmpXMLProduct product;
 	private FmpXMLDatabase database;
 	private FmpXMLMetaData metadata;
+	private FmpXMLResultSet resultSet;
 
 	public String getErrorCode() {
 		return errorCode;
@@ -40,6 +41,14 @@ public class FmpXMLResult {
 		this.metadata = metadata;
 	}
 
+	public FmpXMLResultSet getResultSet() {
+		return resultSet;
+	}
+
+	public void setResultSet(FmpXMLResultSet resultSet) {
+		this.resultSet = resultSet;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -48,6 +57,7 @@ public class FmpXMLResult {
 		sb.append("product=").append(product.toString()).append(", ");
 		sb.append("database=").append(database.toString()).append(", ");
 		sb.append("metadata=").append(metadata.toString()).append(", ");
+		sb.append("resultSet=").append(resultSet.toString());
 		sb.append("] ");
 		return sb.toString();
 	}

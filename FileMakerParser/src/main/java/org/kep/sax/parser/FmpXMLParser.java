@@ -9,8 +9,8 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 public class FmpXMLParser {
 	
-	private static final String SAMPLE_XML = "/src/main/resources/sample.xml";
-	private static final String KARTON_ALL_XML = "/src/main/resources/karton_all.xml";
+	private static final String SAMPLE_XML = "src/main/resources/sample.xml";
+	private static final String KARTON_ALL_XML = "src/main/resources/karton_all.xml";
 
 	public FmpXMLResult parseFmpXMl() {
 

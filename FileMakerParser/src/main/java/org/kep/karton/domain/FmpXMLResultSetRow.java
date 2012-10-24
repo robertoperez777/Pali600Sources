@@ -1,9 +1,16 @@
 package org.kep.karton.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FmpXMLResultSetRow {
 	private String modID;
 	private String recordId;
-	private FmpXMLColumn column;
+	private List<FmpXMLColumn> columns;
+	
+	public FmpXMLResultSetRow() {
+		columns = new ArrayList<FmpXMLColumn>();
+	}
 	
 	public String getModID() {
 		return modID;
@@ -17,11 +24,14 @@ public class FmpXMLResultSetRow {
 	public void setRecordId(String recordId) {
 		this.recordId = recordId;
 	}
-	public FmpXMLColumn getColumn() {
-		return column;
+	public List<FmpXMLColumn> getColumns() {
+		return columns;
 	}
-	public void setColumn(FmpXMLColumn column) {
-		this.column = column;
+	public void setColumns(List<FmpXMLColumn> columns) {
+		this.columns = columns;
+	}
+	public void addToColumns(FmpXMLColumn columns) {
+		this.columns.add(columns);
 	}
 	
 	@Override
@@ -30,7 +40,12 @@ public class FmpXMLResultSetRow {
 		sb.append("FmpXMLResultSetRow[");
 		sb.append("modID=").append(modID).append(", ");
 		sb.append("recordId=").append(recordId).append(", ");
-		sb.append("column=").append(column.toString()).append("] ");
+		for (FmpXMLColumn column : columns) {
+			sb.append(column.toString());
+			sb.append(" ");
+		}
+		sb.append("] ");
 		return sb.toString();
 	}
+	
 }

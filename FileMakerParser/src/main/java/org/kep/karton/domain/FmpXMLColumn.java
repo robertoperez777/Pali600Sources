@@ -7,10 +7,10 @@ public class FmpXMLColumn {
 	
 	private int colId;
 	private String columnName;
-	private List<FmpXMLColumnData> columnData;
+	private List<FmpXMLColumnData> columnDatas;
 	
 	public FmpXMLColumn() {
-		columnData = new ArrayList<FmpXMLColumnData>();
+		columnDatas = new ArrayList<FmpXMLColumnData>();
 	}
 	
 	public int getColId() {
@@ -25,14 +25,14 @@ public class FmpXMLColumn {
 	public void setColumnName(String columnName) {
 		this.columnName = columnName;
 	}
-	public List<FmpXMLColumnData> getColumnData() {
-		return columnData;
+	public List<FmpXMLColumnData> getColumnDatas() {
+		return columnDatas;
 	}
-	public void setColumnData(List<FmpXMLColumnData> columnData) {
-		this.columnData = columnData;
+	public void setColumnDatas(List<FmpXMLColumnData> columnDatas) {
+		this.columnDatas = columnDatas;
 	}
 	public void addToColumnData(FmpXMLColumnData pColumnData){
-		this.columnData.add(pColumnData);
+		this.columnDatas.add(pColumnData);
 	}
 	
 	@Override
@@ -42,7 +42,7 @@ public class FmpXMLColumn {
 		sb.append("colId=").append(colId);
 		sb.append("columnName=").append("columnName").append(", ");
 		sb.append("FmpXMLColumnData[ ");
-		for (FmpXMLColumnData colData : columnData) {
+		for (FmpXMLColumnData colData : columnDatas) {
 			sb.append(colData.toString());
 			sb.append(" ");
 		}
