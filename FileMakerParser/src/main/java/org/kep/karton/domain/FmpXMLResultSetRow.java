@@ -23,4 +23,14 @@ public class FmpXMLResultSetRow {
 	public void setColumn(FmpXMLColumn column) {
 		this.column = column;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("FmpXMLResultSetRow[");
+		sb.append("modID=").append(modID).append(", ");
+		sb.append("recordId=").append(recordId).append(", ");
+		sb.append("column=").append(column.toString()).append("] ");
+		return sb.toString();
+	}
 }

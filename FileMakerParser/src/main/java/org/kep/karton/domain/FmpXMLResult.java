@@ -1,17 +1,12 @@
 package org.kep.karton.domain;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class FmpXMLResult {
 	
 	private String errorCode;
-	private String product;
-	private List<FmpXMLProduct> products;
-	
-	public FmpXMLResult() {
-		products = new ArrayList<FmpXMLProduct>();
-	}
+	private FmpXMLProduct product;
+	private FmpXMLDatabase database;
+	private FmpXMLMetaData metadata;
 
 	public String getErrorCode() {
 		return errorCode;
@@ -21,24 +16,40 @@ public class FmpXMLResult {
 		this.errorCode = errorCode;
 	}
 
-	public String getProduct() {
+	public FmpXMLProduct getProduct() {
 		return product;
 	}
 
-	public void setProduct(String product) {
+	public void setProduct(FmpXMLProduct product) {
 		this.product = product;
 	}
 
-	public List<FmpXMLProduct> getProducts() {
-		return products;
+	public FmpXMLDatabase getDatabase() {
+		return database;
 	}
 
-	public void setProducts(List<FmpXMLProduct> products) {
-		this.products = products;
+	public void setDatabase(FmpXMLDatabase database) {
+		this.database = database;
 	}
-	
-	public void addToProducts(FmpXMLProduct product) {
-		this.products.add(product);
+
+	public FmpXMLMetaData getMetadata() {
+		return metadata;
+	}
+
+	public void setMetadata(FmpXMLMetaData metadata) {
+		this.metadata = metadata;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("FmpXMLResult[");
+		sb.append("errorCode=").append(errorCode).append(", ");
+		sb.append("product=").append(product.toString()).append(", ");
+		sb.append("database=").append(database.toString()).append(", ");
+		sb.append("metadata=").append(metadata.toString()).append(", ");
+		sb.append("] ");
+		return sb.toString();
 	}
 	
 }

@@ -5,7 +5,7 @@ public class FmpXMLColumnData {
 	private int rowId;
 	private String data;
 	
-	public FmpXMLColumnData() {	
+	public FmpXMLColumnData() {
 	}
 	
 	public FmpXMLColumnData(String pData) {
@@ -23,5 +23,14 @@ public class FmpXMLColumnData {
 	}
 	public void setData(String data) {
 		this.data = data;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("FmpXMLColumnData[");
+		sb.append("rowId=").append(rowId).append(", ");
+		sb.append("data=").append(data).append("] ");
+		return sb.toString();
 	}
 }

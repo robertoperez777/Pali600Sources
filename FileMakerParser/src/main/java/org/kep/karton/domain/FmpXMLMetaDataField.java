@@ -31,4 +31,15 @@ public class FmpXMLMetaDataField {
 		this.type = type;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("FmpXMLMetaDataField[");
+		sb.append("emptyOK=").append(emptyOK).append(", ");
+		sb.append("maxRepeat=").append(maxRepeat).append(", ");
+		sb.append("name=").append(name).append(", ");
+		sb.append("type=").append(type).append("] ");
+		return sb.toString();
+	}
+	
 }

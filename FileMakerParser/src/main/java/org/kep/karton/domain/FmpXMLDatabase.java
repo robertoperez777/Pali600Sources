@@ -37,4 +37,16 @@ public class FmpXMLDatabase {
 	public void setTimeFormat(String timeFormat) {
 		this.timeFormat = timeFormat;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("FmpXMLDatabase[");
+		sb.append("dateFormat=").append(dateFormat).append(", ");
+		sb.append("layout=").append(layout).append(", ");
+		sb.append("name=").append(name).append(", ");
+		sb.append("records=").append(records).append(", ");
+		sb.append("timeFormat=").append(timeFormat).append("] ");
+		return sb.toString();
+	}
 }

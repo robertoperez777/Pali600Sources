@@ -22,4 +22,16 @@ public class FmpXMLMetaData {
 	public void addToMetaDataField(FmpXMLMetaDataField metaDataField) {
 		this.metaDataFields.add(metaDataField);
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("FmpXMLMetaDataField[");
+		for (FmpXMLMetaDataField dataField : metaDataFields) {
+			sb.append(dataField.toString());
+			sb.append(" ");
+		}
+		sb.append("] ");
+		return sb.toString();
+	}
 }

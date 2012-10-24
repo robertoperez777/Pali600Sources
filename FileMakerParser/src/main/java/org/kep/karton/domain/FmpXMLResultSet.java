@@ -1,35 +1,42 @@
 package org.kep.karton.domain;
 
+import java.util.List;
+
 public class FmpXMLResultSet {
-	
-	private String errorCode;
-	private FmpXMLProduct product;
-	private FmpXMLDatabase database;
-	private FmpXMLMetaData metadata;
-	
-	public String getErrorCode() {
-		return errorCode;
+
+	private String found;
+	private List<FmpXMLResultSet> resultSet;
+
+	public FmpXMLResultSet() {
 	}
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+
+	public String getFound() {
+		return found;
 	}
-	public FmpXMLProduct getProduct() {
-		return product;
+
+	public void setFound(String found) {
+		this.found = found;
 	}
-	public void setProduct(FmpXMLProduct product) {
-		this.product = product;
+
+	public List<FmpXMLResultSet> getResultSet() {
+		return resultSet;
 	}
-	public FmpXMLDatabase getDatabase() {
-		return database;
+
+	public void setResultSet(List<FmpXMLResultSet> resultSet) {
+		this.resultSet = resultSet;
 	}
-	public void setDatabase(FmpXMLDatabase database) {
-		this.database = database;
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("FmpXMLResultSet[");
+		sb.append("found=").append(found).append(", ");
+		for (FmpXMLResultSet result : resultSet) {
+			sb.append(result.toString());
+			sb.append(" ");
+		}
+		sb.append("] ");
+		return sb.toString();
 	}
-	public FmpXMLMetaData getMetadata() {
-		return metadata;
-	}
-	public void setMetadata(FmpXMLMetaData metadata) {
-		this.metadata = metadata;
-	}
-	
+
 }

@@ -24,4 +24,13 @@ public class FmpXMLProduct {
 		this.version = version;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("FmpXMLProduct[");
+		sb.append("build=").append(build).append(", ");
+		sb.append("name=").append(name).append(", ");
+		sb.append("version=").append(version).append("] ");
+		return sb.toString();
+	}
 }
