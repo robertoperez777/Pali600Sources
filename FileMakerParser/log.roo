@@ -11,3 +11,36 @@ hint
 jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-10-24 23:00:42
 // Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-10-25 19:00:28
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-10-25 20:58:34
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-10-25 21:11:38
+entity jpa --class ~.domain.Person --activeRecord false
+field string --fieldName name --notNull
+field string --fieldName emailAddress
+field string --fieldName maidenName
+field date --fieldName birthDate --notNull --type java.util.Date
+field string --fieldName marriedName
+field string --fieldName comment
+entity jpa --class ~.domain.Address --activeRecord false
+field string --fieldName street --notNull 
+field string --fieldName city --notNull
+field string --fieldName zipCode --notNull --sizeMin 4
+field string --fieldName country
+// [failed] field string --fieldName country --notNull 
+// [failed] field set --fieldName country --notNull --type string
+focus --class ~.domain.Person
+field set --fieldName addresses --type ~.domain.Address
+enum type --class ~.domain.Gender
+enum constant --name MALA
+enum constant --name FEMALE
+focus --class ~.domain.Person
+field enum --fieldName gender --type ~.domain.Gender
+// [failed] field set --type string --fieldName phoneNumbers --cardinality ONE_TO_MANY 
+entity jpa --class ~.domain.PhoneNumber
+focus --class ~.domain.Person
+field set --fieldName phoneNumbers --type ~.domain.PhoneNumber --notNull 
+field set --fieldName phoneNumbers --type ~.domain.PhoneNumber --notNull --cardinality ONE_TO_MANY 
+// [failed] focus --class ~.domain.PhoneNumbers
+// [failed] field string --fieldName number
+focus --class ~.domain.PhoneNumber
+// [failed] field string --fieldName number
+field string --fieldName phoneNumber
