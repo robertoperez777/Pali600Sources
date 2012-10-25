@@ -9,3 +9,5 @@ help
 hint
 // [failed] jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
 jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-10-24 23:00:42
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-10-25 19:00:28
