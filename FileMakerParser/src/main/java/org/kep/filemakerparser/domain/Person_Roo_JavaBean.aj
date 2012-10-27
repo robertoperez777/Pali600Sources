@@ -6,7 +6,9 @@ package org.kep.filemakerparser.domain;
 import java.util.Date;
 import java.util.Set;
 import org.kep.filemakerparser.domain.Address;
+import org.kep.filemakerparser.domain.ChurchMaintenance;
 import org.kep.filemakerparser.domain.Gender;
+import org.kep.filemakerparser.domain.Munificence;
 import org.kep.filemakerparser.domain.Person;
 import org.kep.filemakerparser.domain.PhoneNumber;
 
@@ -82,6 +84,22 @@ privileged aspect Person_Roo_JavaBean {
     
     public void Person.setPhoneNumbers(Set<PhoneNumber> phoneNumbers) {
         this.phoneNumbers = phoneNumbers;
+    }
+    
+    public Set<ChurchMaintenance> Person.getChurchMaintenances() {
+        return this.churchMaintenances;
+    }
+    
+    public void Person.setChurchMaintenances(Set<ChurchMaintenance> churchMaintenances) {
+        this.churchMaintenances = churchMaintenances;
+    }
+    
+    public Set<Munificence> Person.getMunificences() {
+        return this.munificences;
+    }
+    
+    public void Person.setMunificences(Set<Munificence> munificences) {
+        this.munificences = munificences;
     }
     
 }

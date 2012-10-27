@@ -44,3 +44,19 @@ field set --fieldName phoneNumbers --type ~.domain.PhoneNumber --notNull --cardi
 focus --class ~.domain.PhoneNumber
 // [failed] field string --fieldName number
 field string --fieldName phoneNumber
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-10-25 22:53:52
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-10-27 13:16:41
+entity jpa --class ~.domain.ChurchMaintenance
+// [failed] field date --fieldName year --type java.util.Date --notNull
+field date --fieldName yearOfMaintenance --type java.util.Date --notNull
+field number --fieldName paymentNumber --type int --notNull 
+field number --fieldName amount --type java.math.BigDecimal --notNull 
+field string --fieldName description
+entity jpa --class ~.domain.Munificence
+field string --fieldName purpose
+field number --fieldName amount --type java.math.BigDecimal --notNull 
+field date --fieldName yearOfMunificence --type java.util.Date --notNull
+field string --fieldName description
+focus --class ~.domain.Person
+field set --fieldName churchMaintenances --type ~.domain.ChurchMaintenance --notNull --cardinality ONE_TO_MANY 
+field set --fieldName munificences --type ~.domain.Munificence --notNull --cardinality ONE_TO_MANY 

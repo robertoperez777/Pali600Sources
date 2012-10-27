@@ -45,4 +45,12 @@ public class Person {
     @NotNull
     @OneToMany(cascade = CascadeType.ALL)
     private Set<PhoneNumber> phoneNumbers = new HashSet<PhoneNumber>();
+
+    @NotNull
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<ChurchMaintenance> churchMaintenances = new HashSet<ChurchMaintenance>();
+
+    @NotNull
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Munificence> munificences = new HashSet<Munificence>();
 }
