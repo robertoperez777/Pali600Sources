@@ -60,3 +60,22 @@ field string --fieldName description
 focus --class ~.domain.Person
 field set --fieldName churchMaintenances --type ~.domain.ChurchMaintenance --notNull --cardinality ONE_TO_MANY 
 field set --fieldName munificences --type ~.domain.Munificence --notNull --cardinality ONE_TO_MANY 
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-11-03 17:27:45
+persistence setup --database HYPERSONIC_PERSISTENT --provider HIBERNATE 
+repository jpa --interface ~.repository.AddressRepository --entity ~.domain.Topping
+repository jpa --interface ~.repository.AddressRepository --entity ~.domain.Address
+repository jpa --interface ~.repository.GenderRepository --entity ~.domain.Gender
+repository jpa --interface ~.repository.ChurchMaintenanceRepository --entity ~.domain.ChurchMaintenance
+repository jpa --interface ~.repository.MunificenceRepository --entity ~.domain.Munificence
+repository jpa --interface ~.repository.PhoneNumnerRepository --entity ~.domain.PhoneNumner
+service --interface ~.service.AddressService --entity ~.domain.Address
+service --interface ~.service.ChurchMaintenanceService --entity ~.domain.ChurchMaintenance
+service --interface ~.service.GenderService --entity ~.domain.Gender
+service --interface ~.service.MunificenceService --entity ~.domain.Munificence
+service --interface ~.service.PhoneNumberService --entity ~.domain.PhoneNumber
+repository jpa --interface ~.repository.PersonRepository --entity ~.domain.Person
+service --interface ~.service.PersonService --entity ~.domain.Person
+json all --deepSerialize 
+web mvc json setup
+repository jpa --interface ~.repository.PhoneNumberRepository --entity ~.domain.PhoneNumber
+web mvc setup
