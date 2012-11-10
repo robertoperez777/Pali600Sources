@@ -1,0 +1,90 @@
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-10-24 22:33:00
+// [failed] hint
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-10-24 22:34:27
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-10-24 22:34:45
+hint
+// [failed] jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+// [failed] jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+help
+hint
+// [failed] jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-10-24 23:00:42
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-10-25 19:00:28
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-10-25 20:58:34
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-10-25 21:11:38
+entity jpa --class ~.domain.Person --activeRecord false
+field string --fieldName name --notNull
+field string --fieldName emailAddress
+field string --fieldName maidenName
+field date --fieldName birthDate --notNull --type java.util.Date
+field string --fieldName marriedName
+field string --fieldName comment
+entity jpa --class ~.domain.Address --activeRecord false
+field string --fieldName street --notNull 
+field string --fieldName city --notNull
+field string --fieldName zipCode --notNull --sizeMin 4
+field string --fieldName country
+// [failed] field string --fieldName country --notNull 
+// [failed] field set --fieldName country --notNull --type string
+focus --class ~.domain.Person
+field set --fieldName addresses --type ~.domain.Address
+enum type --class ~.domain.Gender
+enum constant --name MALA
+enum constant --name FEMALE
+focus --class ~.domain.Person
+field enum --fieldName gender --type ~.domain.Gender
+// [failed] field set --type string --fieldName phoneNumbers --cardinality ONE_TO_MANY 
+entity jpa --class ~.domain.PhoneNumber
+focus --class ~.domain.Person
+field set --fieldName phoneNumbers --type ~.domain.PhoneNumber --notNull 
+field set --fieldName phoneNumbers --type ~.domain.PhoneNumber --notNull --cardinality ONE_TO_MANY 
+// [failed] focus --class ~.domain.PhoneNumbers
+// [failed] field string --fieldName number
+focus --class ~.domain.PhoneNumber
+// [failed] field string --fieldName number
+field string --fieldName phoneNumber
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-10-25 22:53:52
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-10-27 13:16:41
+entity jpa --class ~.domain.ChurchMaintenance
+// [failed] field date --fieldName year --type java.util.Date --notNull
+field date --fieldName yearOfMaintenance --type java.util.Date --notNull
+field number --fieldName paymentNumber --type int --notNull 
+field number --fieldName amount --type java.math.BigDecimal --notNull 
+field string --fieldName description
+entity jpa --class ~.domain.Munificence
+field string --fieldName purpose
+field number --fieldName amount --type java.math.BigDecimal --notNull 
+field date --fieldName yearOfMunificence --type java.util.Date --notNull
+field string --fieldName description
+focus --class ~.domain.Person
+field set --fieldName churchMaintenances --type ~.domain.ChurchMaintenance --notNull --cardinality ONE_TO_MANY 
+field set --fieldName munificences --type ~.domain.Munificence --notNull --cardinality ONE_TO_MANY 
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-11-03 17:27:45
+persistence setup --database HYPERSONIC_PERSISTENT --provider HIBERNATE 
+repository jpa --interface ~.repository.AddressRepository --entity ~.domain.Topping
+repository jpa --interface ~.repository.AddressRepository --entity ~.domain.Address
+repository jpa --interface ~.repository.GenderRepository --entity ~.domain.Gender
+repository jpa --interface ~.repository.ChurchMaintenanceRepository --entity ~.domain.ChurchMaintenance
+repository jpa --interface ~.repository.MunificenceRepository --entity ~.domain.Munificence
+repository jpa --interface ~.repository.PhoneNumnerRepository --entity ~.domain.PhoneNumner
+service --interface ~.service.AddressService --entity ~.domain.Address
+service --interface ~.service.ChurchMaintenanceService --entity ~.domain.ChurchMaintenance
+service --interface ~.service.GenderService --entity ~.domain.Gender
+service --interface ~.service.MunificenceService --entity ~.domain.Munificence
+service --interface ~.service.PhoneNumberService --entity ~.domain.PhoneNumber
+repository jpa --interface ~.repository.PersonRepository --entity ~.domain.Person
+service --interface ~.service.PersonService --entity ~.domain.Person
+json all --deepSerialize 
+web mvc json setup
+repository jpa --interface ~.repository.PhoneNumberRepository --entity ~.domain.PhoneNumber
+web mvc setup
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-11-04 10:49:31
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-11-04 11:26:56
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-11-10 12:52:19
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-11-10 15:33:18
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-11-10 16:09:12
+field reference --fieldName person --type ~.domain.Person --class ~.domain.PhoneNumber --notNull
+field reference --fieldName person --type ~.domain.Person --class ~.domain.ChurchMaintenance --notNull
+field reference --fieldName person --type ~.domain.Person --class ~.domain.Munificence --notNull
+controller all --package ~.web

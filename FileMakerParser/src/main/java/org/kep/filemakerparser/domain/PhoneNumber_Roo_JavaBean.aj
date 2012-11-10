@@ -3,6 +3,7 @@
 
 package org.kep.filemakerparser.domain;
 
+import org.kep.filemakerparser.domain.Person;
 import org.kep.filemakerparser.domain.PhoneNumber;
 
 privileged aspect PhoneNumber_Roo_JavaBean {
@@ -13,6 +14,14 @@ privileged aspect PhoneNumber_Roo_JavaBean {
     
     public void PhoneNumber.setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+    
+    public Person PhoneNumber.getPerson() {
+        return this.person;
+    }
+    
+    public void PhoneNumber.setPerson(Person person) {
+        this.person = person;
     }
     
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_kep_filemakerparser_domain_Munificence" items="${munificences}" z="rKfvZOUpmbUAOmJbzHaEPHyN1zk=">
+        <table:table data="${munificences}" id="l_org_kep_filemakerparser_domain_Munificence" path="/munificences" z="ivsQONMgy/TO5K9u9MxRbEzta9U=">
+            <table:column id="c_org_kep_filemakerparser_domain_Munificence_purpose" property="purpose" z="iiJ2CKM3CztvAvr1JG9x+m+71cI="/>
+            <table:column id="c_org_kep_filemakerparser_domain_Munificence_amount" property="amount" z="9YUtxEKWiqft5VHLmYqroNqma74="/>
+            <table:column date="true" dateTimePattern="${munificence_yearofmunificence_date_format}" id="c_org_kep_filemakerparser_domain_Munificence_yearOfMunificence" property="yearOfMunificence" z="FEtoBmp+gLU+X2cUHwS3Xfa3Fuw="/>
+            <table:column id="c_org_kep_filemakerparser_domain_Munificence_description" property="description" z="wqvDsPNW6FGqrk89s0ZGVpAfP9k="/>
+            <table:column id="c_org_kep_filemakerparser_domain_Munificence_person" property="person" z="UpLxLpYe4yQynShfC03k70krE+A="/>
+        </table:table>
+    </page:list>
+</div>

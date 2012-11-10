@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_kep_filemakerparser_domain_Person" object="${person}" path="/people" z="98CJfdNv/js5D+Q2NpGQ1sA7Zaw=">
+        <field:display field="name" id="s_org_kep_filemakerparser_domain_Person_name" object="${person}" z="a0+0LUSPIEfPAVN1C5B8rkPARFs="/>
+        <field:display field="emailAddress" id="s_org_kep_filemakerparser_domain_Person_emailAddress" object="${person}" z="ihWTM4rW3aVg9pnHdfe2mQI2F7Q="/>
+        <field:display field="maidenName" id="s_org_kep_filemakerparser_domain_Person_maidenName" object="${person}" z="pvu8TptOPYYOAPfCg7iZg5jgkak="/>
+        <field:display date="true" dateTimePattern="${person_birthdate_date_format}" field="birthDate" id="s_org_kep_filemakerparser_domain_Person_birthDate" object="${person}" z="i4KeG1MM+S0KFjUc6v8aC4sYFds="/>
+        <field:display field="marriedName" id="s_org_kep_filemakerparser_domain_Person_marriedName" object="${person}" z="U+sRKEUYKsv0k/xVFgsWckT7B1Y="/>
+        <field:display field="comment" id="s_org_kep_filemakerparser_domain_Person_comment" object="${person}" z="8L6s9UGO+M2BdN7UkyMmv1z12Kw="/>
+        <field:display field="addresses" id="s_org_kep_filemakerparser_domain_Person_addresses" object="${person}" z="5OBgaIDq5pBitOGfT3HlGIjwggQ="/>
+        <field:display field="gender" id="s_org_kep_filemakerparser_domain_Person_gender" object="${person}" z="/3DSbmYXCSJGhI2OvOqJwsREeqA="/>
+    </page:show>
+</div>

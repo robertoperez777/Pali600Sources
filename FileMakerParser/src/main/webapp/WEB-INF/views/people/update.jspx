@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_org_kep_filemakerparser_domain_Person" modelAttribute="person" path="/people" versionField="Version" z="c0xGPCyAcGtHrW5O1oeiHsbqgE0=">
+        <field:input field="name" id="c_org_kep_filemakerparser_domain_Person_name" required="true" z="E36MFjG5N6mah4kLpPRDUX6RcBU="/>
+        <field:input field="emailAddress" id="c_org_kep_filemakerparser_domain_Person_emailAddress" validationMessageCode="field_invalid_email" z="8uQibwiEWJsGuGRArcTpW5wL/KQ="/>
+        <field:input field="maidenName" id="c_org_kep_filemakerparser_domain_Person_maidenName" z="0HZWAth49ToMVACR2BsnTUXhMC8="/>
+        <field:datetime dateTimePattern="${person_birthdate_date_format}" field="birthDate" id="c_org_kep_filemakerparser_domain_Person_birthDate" required="true" z="rsNYjSIgJHqIn3iy3ks0wbKCDbU="/>
+        <field:input field="marriedName" id="c_org_kep_filemakerparser_domain_Person_marriedName" z="vRLG4co96pzVIehmt7j+jQ/kUjY="/>
+        <field:input field="comment" id="c_org_kep_filemakerparser_domain_Person_comment" z="Y6cZqoNunNuHBn8osHALfzPtHEg="/>
+        <field:select field="addresses" id="c_org_kep_filemakerparser_domain_Person_addresses" itemValue="id" items="${addresses}" multiple="true" path="/addresses" z="ksJtHqhIEwGoafvDCVopfGo8hKE="/>
+        <field:select field="gender" id="c_org_kep_filemakerparser_domain_Person_gender" items="${genders}" path="genders" z="1HDUj4wKjXS2EJs3JTr4ZejIlyk="/>
+        <field:simple field="phoneNumbers" id="c_org_kep_filemakerparser_domain_Person_phoneNumbers" messageCode="entity_reference_not_managed" messageCodeAttribute="Phone Number" z="i1/w0Hhcn3/3Mf+mOIhhZlv9pCk="/>
+        <field:simple field="churchMaintenances" id="c_org_kep_filemakerparser_domain_Person_churchMaintenances" messageCode="entity_reference_not_managed" messageCodeAttribute="Church Maintenance" z="6jAMWaaJWqiXsPd1hn+7c8sSXWs="/>
+        <field:simple field="munificences" id="c_org_kep_filemakerparser_domain_Person_munificences" messageCode="entity_reference_not_managed" messageCodeAttribute="Munificence" z="4bfh3Q5R33RlY6K2+8t2Jih0vII="/>
+    </form:update>
+</div>

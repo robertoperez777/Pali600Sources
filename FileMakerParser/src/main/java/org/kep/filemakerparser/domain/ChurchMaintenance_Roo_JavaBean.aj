@@ -6,6 +6,7 @@ package org.kep.filemakerparser.domain;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.kep.filemakerparser.domain.ChurchMaintenance;
+import org.kep.filemakerparser.domain.Person;
 
 privileged aspect ChurchMaintenance_Roo_JavaBean {
     
@@ -39,6 +40,14 @@ privileged aspect ChurchMaintenance_Roo_JavaBean {
     
     public void ChurchMaintenance.setDescription(String description) {
         this.description = description;
+    }
+    
+    public Person ChurchMaintenance.getPerson() {
+        return this.person;
+    }
+    
+    public void ChurchMaintenance.setPerson(Person person) {
+        this.person = person;
     }
     
 }

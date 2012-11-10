@@ -6,6 +6,7 @@ package org.kep.filemakerparser.domain;
 import java.math.BigDecimal;
 import java.util.Date;
 import org.kep.filemakerparser.domain.Munificence;
+import org.kep.filemakerparser.domain.Person;
 
 privileged aspect Munificence_Roo_JavaBean {
     
@@ -39,6 +40,14 @@ privileged aspect Munificence_Roo_JavaBean {
     
     public void Munificence.setDescription(String description) {
         this.description = description;
+    }
+    
+    public Person Munificence.getPerson() {
+        return this.person;
+    }
+    
+    public void Munificence.setPerson(Person person) {
+        this.person = person;
     }
     
 }
