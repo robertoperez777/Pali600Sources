@@ -1,4 +1,4 @@
-package org.kep.FileMakerParser.web;
+package org.kep.filemakerparser.web;
 
 import org.kep.filemakerparser.domain.Address;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;

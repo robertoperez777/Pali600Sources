@@ -1,4 +1,4 @@
-package org.kep.FileMakerParser.web;
+package org.kep.filemakerparser.web;
 
 import org.springframework.format.FormatterRegistry;
 import org.springframework.format.support.FormattingConversionServiceFactoryBean;

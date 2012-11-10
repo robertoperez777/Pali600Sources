@@ -88,3 +88,14 @@ field reference --fieldName person --type ~.domain.Person --class ~.domain.Phone
 field reference --fieldName person --type ~.domain.Person --class ~.domain.ChurchMaintenance --notNull
 field reference --fieldName person --type ~.domain.Person --class ~.domain.Munificence --notNull
 controller all --package ~.web
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-11-10 21:48:58
+persistence setup --database HYPERSONIC_PERSISTENT --provider HIBERNATE 
+focus --class ~.domain.Address
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-11-10 21:53:22
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-11-10 21:59:32
+help
+q
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2012-11-10 22:00:08
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-11-10 22:12:31
+persistence setup --database HYPERSONIC_IN_MEMORY --provider HIBERNATE 
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2012-11-10 22:30:00
