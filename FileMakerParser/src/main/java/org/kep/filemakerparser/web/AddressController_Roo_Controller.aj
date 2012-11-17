@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.kep.filemakerparser.domain.Address;
 import org.kep.filemakerparser.service.AddressService;
+import org.kep.filemakerparser.service.PersonService;
 import org.kep.filemakerparser.web.AddressController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -23,6 +24,9 @@ privileged aspect AddressController_Roo_Controller {
     
     @Autowired
     AddressService AddressController.addressService;
+    
+    @Autowired
+    PersonService AddressController.personService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String AddressController.create(@Valid Address address, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -91,6 +95,7 @@ privileged aspect AddressController_Roo_Controller {
     
     void AddressController.populateEditForm(Model uiModel, Address address) {
         uiModel.addAttribute("address", address);
+        uiModel.addAttribute("people", personService.findAllPeople());
     }
     
     String AddressController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

@@ -9,7 +9,7 @@
         <field:display date="true" dateTimePattern="${person_birthdate_date_format}" field="birthDate" id="s_org_kep_filemakerparser_domain_Person_birthDate" object="${person}" z="i4KeG1MM+S0KFjUc6v8aC4sYFds="/>
         <field:display field="marriedName" id="s_org_kep_filemakerparser_domain_Person_marriedName" object="${person}" z="U+sRKEUYKsv0k/xVFgsWckT7B1Y="/>
         <field:display field="comment" id="s_org_kep_filemakerparser_domain_Person_comment" object="${person}" z="8L6s9UGO+M2BdN7UkyMmv1z12Kw="/>
-        <field:display field="addresses" id="s_org_kep_filemakerparser_domain_Person_addresses" object="${person}" z="5OBgaIDq5pBitOGfT3HlGIjwggQ="/>
         <field:display field="gender" id="s_org_kep_filemakerparser_domain_Person_gender" object="${person}" z="/3DSbmYXCSJGhI2OvOqJwsREeqA="/>
+        <field:display field="address" id="s_org_kep_filemakerparser_domain_Person_address" object="${person}" z="yA0ZUDCMJev46+AyKae0wheFFW4="/>
     </page:show>
 </div>

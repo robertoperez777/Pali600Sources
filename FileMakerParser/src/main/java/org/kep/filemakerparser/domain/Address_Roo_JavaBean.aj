@@ -3,7 +3,9 @@
 
 package org.kep.filemakerparser.domain;
 
+import java.util.Set;
 import org.kep.filemakerparser.domain.Address;
+import org.kep.filemakerparser.domain.Person;
 
 privileged aspect Address_Roo_JavaBean {
     
@@ -37,6 +39,14 @@ privileged aspect Address_Roo_JavaBean {
     
     public void Address.setCountry(String country) {
         this.country = country;
+    }
+    
+    public Set<Person> Address.getPesons() {
+        return this.pesons;
+    }
+    
+    public void Address.setPesons(Set<Person> pesons) {
+        this.pesons = pesons;
     }
     
 }

@@ -7,6 +7,7 @@
         <field:input field="city" id="c_org_kep_filemakerparser_domain_Address_city" required="true" z="3HoZFRbCYnp22r3rYu+Nrhnyrqk="/>
         <field:input field="zipCode" id="c_org_kep_filemakerparser_domain_Address_zipCode" min="4" required="true" z="JmpusknVCEExlcgV9j2ws5OT2OA="/>
         <field:input field="country" id="c_org_kep_filemakerparser_domain_Address_country" z="IdFoiFoznnjZgnM3chWeEa7isSQ="/>
+        <field:simple field="pesons" id="c_org_kep_filemakerparser_domain_Address_pesons" messageCode="entity_reference_not_managed" messageCodeAttribute="Person" z="y6gtdUkvhjkmyn8piE+6VPZuk7c="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_org_kep_filemakerparser_domain_Address" render="${not empty dependencies}" z="fM76DY+PdKKU2C16emleOBAOU6Q="/>
 </div>

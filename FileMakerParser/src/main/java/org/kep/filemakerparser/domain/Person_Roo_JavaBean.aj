@@ -62,12 +62,12 @@ privileged aspect Person_Roo_JavaBean {
         this.comment = comment;
     }
     
-    public Set<Address> Person.getAddresses() {
-        return this.addresses;
+    public Address Person.getAddress() {
+        return this.address;
     }
     
-    public void Person.setAddresses(Set<Address> addresses) {
-        this.addresses = addresses;
+    public void Person.setAddress(Address address) {
+        this.address = address;
     }
     
     public Gender Person.getGender() {

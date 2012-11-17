@@ -9,11 +9,11 @@
         <field:datetime dateTimePattern="${person_birthdate_date_format}" field="birthDate" id="c_org_kep_filemakerparser_domain_Person_birthDate" required="true" z="rsNYjSIgJHqIn3iy3ks0wbKCDbU="/>
         <field:input field="marriedName" id="c_org_kep_filemakerparser_domain_Person_marriedName" z="vRLG4co96pzVIehmt7j+jQ/kUjY="/>
         <field:input field="comment" id="c_org_kep_filemakerparser_domain_Person_comment" z="Y6cZqoNunNuHBn8osHALfzPtHEg="/>
-        <field:select field="addresses" id="c_org_kep_filemakerparser_domain_Person_addresses" itemValue="id" items="${addresses}" multiple="true" path="/addresses" z="ksJtHqhIEwGoafvDCVopfGo8hKE="/>
         <field:select field="gender" id="c_org_kep_filemakerparser_domain_Person_gender" items="${genders}" path="genders" z="1HDUj4wKjXS2EJs3JTr4ZejIlyk="/>
         <field:simple field="phoneNumbers" id="c_org_kep_filemakerparser_domain_Person_phoneNumbers" messageCode="entity_reference_not_managed" messageCodeAttribute="Phone Number" z="i1/w0Hhcn3/3Mf+mOIhhZlv9pCk="/>
         <field:simple field="churchMaintenances" id="c_org_kep_filemakerparser_domain_Person_churchMaintenances" messageCode="entity_reference_not_managed" messageCodeAttribute="Church Maintenance" z="6jAMWaaJWqiXsPd1hn+7c8sSXWs="/>
         <field:simple field="munificences" id="c_org_kep_filemakerparser_domain_Person_munificences" messageCode="entity_reference_not_managed" messageCodeAttribute="Munificence" z="4bfh3Q5R33RlY6K2+8t2Jih0vII="/>
+        <field:select field="address" id="c_org_kep_filemakerparser_domain_Person_address" itemValue="id" items="${addresses}" path="/addresses" z="iT8ZKM+UaN9+lLi2nrULam7gobo="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_org_kep_filemakerparser_domain_Person" render="${not empty dependencies}" z="KtQc/rqtkv5Pc1OVvTPmcLoqOGM="/>
 </div>
