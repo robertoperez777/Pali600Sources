@@ -3,11 +3,11 @@
 
 package org.kep.filemakerparser.domain;
 
-import org.kep.filemakerparser.domain.ChurchMaintenance;
+import org.kep.filemakerparser.domain.Address;
 import org.springframework.beans.factory.annotation.Configurable;
 
-privileged aspect ChurchMaintenance_Roo_Configurable {
+privileged aspect Address_Roo_Configurable {
     
-    declare @type: ChurchMaintenance: @Configurable;
+    declare @type: Address: @Configurable;
     
 }

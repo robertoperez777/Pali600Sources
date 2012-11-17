@@ -6,70 +6,70 @@ package org.kep.filemakerparser.domain;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.kep.filemakerparser.domain.ChurchMaintenance;
+import org.kep.filemakerparser.domain.Person;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect ChurchMaintenance_Roo_Jpa_ActiveRecord {
+privileged aspect Person_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager ChurchMaintenance.entityManager;
+    transient EntityManager Person.entityManager;
     
-    public static final EntityManager ChurchMaintenance.entityManager() {
-        EntityManager em = new ChurchMaintenance().entityManager;
+    public static final EntityManager Person.entityManager() {
+        EntityManager em = new Person().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long ChurchMaintenance.countChurchMaintenances() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM ChurchMaintenance o", Long.class).getSingleResult();
+    public static long Person.countPeople() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Person o", Long.class).getSingleResult();
     }
     
-    public static List<ChurchMaintenance> ChurchMaintenance.findAllChurchMaintenances() {
-        return entityManager().createQuery("SELECT o FROM ChurchMaintenance o", ChurchMaintenance.class).getResultList();
+    public static List<Person> Person.findAllPeople() {
+        return entityManager().createQuery("SELECT o FROM Person o", Person.class).getResultList();
     }
     
-    public static ChurchMaintenance ChurchMaintenance.findChurchMaintenance(Long id) {
+    public static Person Person.findPerson(Long id) {
         if (id == null) return null;
-        return entityManager().find(ChurchMaintenance.class, id);
+        return entityManager().find(Person.class, id);
     }
     
-    public static List<ChurchMaintenance> ChurchMaintenance.findChurchMaintenanceEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM ChurchMaintenance o", ChurchMaintenance.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Person> Person.findPersonEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Person o", Person.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
-    public void ChurchMaintenance.persist() {
+    public void Person.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void ChurchMaintenance.remove() {
+    public void Person.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            ChurchMaintenance attached = ChurchMaintenance.findChurchMaintenance(this.id);
+            Person attached = Person.findPerson(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void ChurchMaintenance.flush() {
+    public void Person.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void ChurchMaintenance.clear() {
+    public void Person.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public ChurchMaintenance ChurchMaintenance.merge() {
+    public Person Person.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        ChurchMaintenance merged = this.entityManager.merge(this);
+        Person merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
