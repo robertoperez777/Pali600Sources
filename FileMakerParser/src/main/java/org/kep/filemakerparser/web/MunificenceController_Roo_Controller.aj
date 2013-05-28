@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
 import org.kep.filemakerparser.domain.Munificence;
+import org.kep.filemakerparser.domain.Person;
 import org.kep.filemakerparser.service.MunificenceService;
 import org.kep.filemakerparser.service.PersonService;
 import org.kep.filemakerparser.web.MunificenceController;
