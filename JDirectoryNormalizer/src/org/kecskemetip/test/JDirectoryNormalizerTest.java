@@ -14,7 +14,7 @@ public class JDirectoryNormalizerTest {
 
 	@Test
 	public void normalizeFilesAndSubDirectories() {
-		JDirectoryNormalizer.normalizeFilesAndSubDirectories("/home/pali/Letöltések/TeaéáűőúöüóíÉÁŰ");
+		JDirectoryNormalizer.normalizeFilesAndSubDirectories("/media/pali/STORAGE_HDD/Movies");
 	}
 
 }
