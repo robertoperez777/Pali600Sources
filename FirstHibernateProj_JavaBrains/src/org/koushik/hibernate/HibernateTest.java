@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.javabrains.koushik.dto.Address;
 import org.javabrains.koushik.dto.UserDetails;
+import org.javabrains.koushik.dto.Vehicle;
 
 public class HibernateTest {
 	public static void main(String[] args) {
@@ -14,6 +15,17 @@ public class HibernateTest {
 		user.setUserName("First User");
 		user.setJoinedDate(new Date());
 		user.setDescription("Description of the user goes here");
+
+		Vehicle vehicle = new Vehicle();
+		vehicle.setVehicleName("Car");
+		vehicle.setUser(user);
+
+		Vehicle vehicle2 = new Vehicle();
+		vehicle2.setVehicleName("Jeep");
+		vehicle2.setUser(user);
+
+		user.getVehicle().add(vehicle);
+		user.getVehicle().add(vehicle2);
 
 		Address address = new Address();
 		address.setStreet("First Street");
@@ -43,6 +55,8 @@ public class HibernateTest {
 		session.beginTransaction();
 		session.save(user);
 		session.save(user2);
+		session.save(vehicle);
+		session.save(vehicle2);
 		session.getTransaction().commit();
 		session.close();
 

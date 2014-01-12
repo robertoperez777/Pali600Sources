@@ -16,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -34,7 +35,6 @@ public class UserDetails {
 	private String userName;
 	@Temporal(TemporalType.DATE)
 	private Date joinedDate;
-	// @Lob
 	private String description;
 	@Embedded
 	@AttributeOverrides({
@@ -50,6 +50,9 @@ public class UserDetails {
 	@GenericGenerator(name = "hilo-gen", strategy = "hilo")
 	@CollectionId(columns = { @Column(name = "ADDRESS_ID") }, generator = "hilo-gen", type = @Type(type = "long"))
 	private Collection<Address> listOfAdresses = new ArrayList<Address>();
+	@OneToMany
+	@JoinTable(name = "USER_VEHICLE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
+	private Collection<Vehicle> vehicle = new ArrayList<Vehicle>();
 
 	public int getUserId() {
 		return userId;
@@ -105,6 +108,14 @@ public class UserDetails {
 
 	public void setListOfAdresses(Collection<Address> listOfAdresses) {
 		this.listOfAdresses = listOfAdresses;
+	}
+
+	public Collection<Vehicle> getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(Collection<Vehicle> vehicle) {
+		this.vehicle = vehicle;
 	}
 
 }
