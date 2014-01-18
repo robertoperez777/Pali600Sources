@@ -11,6 +11,7 @@ import org.javabrains.koushik.dto.Vehicle;
 
 public class HibernateTest {
 	public static void main(String[] args) {
+
 		UserDetails user = new UserDetails();
 		user.setUserName("First User");
 		user.setJoinedDate(new Date());
@@ -49,8 +50,7 @@ public class HibernateTest {
 		user.getListOfAdresses().add(address);
 		user.getListOfAdresses().add(address2);
 
-		SessionFactory sessionFactory = new Configuration().configure()
-				.buildSessionFactory();
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(user);
