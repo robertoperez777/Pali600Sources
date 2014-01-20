@@ -1,7 +1,5 @@
 package proxy;
 
-import state.ATMState;
-
 public class ATMMachine implements GetATMData {
 
 	public ATMState getYesCardState() {
