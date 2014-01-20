@@ -1,0 +1,34 @@
+4 ROW TREE
+
+_______1
+___1_______1
+_1___1___1___1
+1_1_1_1_1_1_1_1
+
+1st Row Indent 7 Spaces 0
+2nd Row Indent 3 Spaces 7
+3rd Row Indent 1 Spaces 3
+4th Row Indent 0 Spaces 1
+
+Indent : -2^-n * (-16+2^n) start with 1
+Spaces : 0 and then whatever Indent was
+
+First Index Per Row
+0
+1 2
+3 4 5 6
+7 8 9 10 11 12 13 14
+.5 * (-2 + (Math.pow(2, iteration)))
+
+Items Per Row
+1, 2, 4, 8
+Math.pow(2, iteration - 1)
+
+Max Index Per Row
+indexToPrint + itemsPerRow
+
+Indent Number
+Indent Number Space Number
+Indent Number Space Number Space...
+
+I need 1 index followed by multiple numbers & spaces every time
