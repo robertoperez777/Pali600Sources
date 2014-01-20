@@ -1,10 +1,15 @@
 package org.koushik.hibernate;
 
 import java.util.Date;
+import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Restrictions;
 import org.javabrains.koushik.dto.Address;
 import org.javabrains.koushik.dto.UserDetails;
 import org.javabrains.koushik.dto.Vehicle;
@@ -70,8 +75,42 @@ public class HibernateTest {
 
 		user = null;
 		session = sessionFactory.openSession();
-		user = (UserDetails) session.get(UserDetails.class, 1);
+		session.beginTransaction();
+		
+		UserDetails exampleUser = new UserDetails();
+		exampleUser.setUserId(5);
+		exampleUser.setUserName("User 5");
+		
+		Example example = Example.create(exampleUser).excludeProperty("userName");
+		
+		Criteria criteria = session.createCriteria(UserDetails.class).add(example);
+
+		criteria
+			.add(Restrictions.like("userName", "%User%"))
+			.add(Restrictions.between("userId", 0, 50));
+		List<UserDetails> users = (List<UserDetails>) criteria.list();
+		for (UserDetails userDetails : users) {
+			System.out.println(userDetails.getUserName());
+		}				
+		
+		
+		Query query = session.getNamedQuery("UserDetails.byName");
+		query.setString(0, "Second User");
+		users = (List<UserDetails>) query.list();
+		for (UserDetails userDetails : users) {
+			System.out.println(userDetails.getUserName());
+		}				
+		
+		String minUserId = "0";
+		String userName = "Second User";
+		query = session.createQuery("from UserDetails where userId > :userId and userName = :userName");
+		query.setInteger("userId", Integer.parseInt(minUserId));
+		query.setString("userName", userName);
+		
+		users = (List<UserDetails>) query.list();
+		System.out.println("User list size: " + users.size());
+		//session.getTransaction().commit();
 		session.close();
-		System.out.println(user.getListOfAdresses().size());
+		//System.out.println(user.getListOfAdresses().size());
 	}
 }

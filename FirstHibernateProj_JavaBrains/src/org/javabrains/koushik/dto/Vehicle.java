@@ -3,15 +3,25 @@ package org.javabrains.koushik.dto;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Transient;
 
 @Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+/*
+@DiscriminatorColumn(name="VEHICLE_TYPE",
+	discriminatorType=DiscriminatorType.STRING
+)
+*/
 public class Vehicle {
 	@Id
 	@GeneratedValue
 	private int vehicleId;
 	private String vehicleName;
-	@ManyToOne
+	//@ManyToOne
+	//@NotFound(action=NotFoundAction.IGNORE)
+	@Transient
 	private UserDetails user;
 
 	public int getVehicleId() {

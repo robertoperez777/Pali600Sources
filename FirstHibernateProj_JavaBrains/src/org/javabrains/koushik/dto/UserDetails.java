@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
@@ -16,6 +17,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -26,7 +29,10 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 @Entity
+@NamedQuery(name="UserDetails.byId", query="from UserDetails where userId = ?")
+@NamedNativeQuery(name="UserDetails.byName", query="select * from User_Details where username = ?", resultClass=UserDetails.class)
 @Table(name = "USER_DETAILS")
+@org.hibernate.annotations.Entity(selectBeforeUpdate=true)
 public class UserDetails {
 
 	@Id
@@ -50,7 +56,7 @@ public class UserDetails {
 	@GenericGenerator(name = "hilo-gen", strategy = "hilo")
 	@CollectionId(columns = { @Column(name = "ADDRESS_ID") }, generator = "hilo-gen", type = @Type(type = "long"))
 	private Collection<Address> listOfAdresses = new ArrayList<Address>();
-	@OneToMany
+	@OneToMany(cascade=CascadeType.PERSIST)
 	@JoinTable(name = "USER_VEHICLE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
 	private Collection<Vehicle> vehicle = new ArrayList<Vehicle>();
 
