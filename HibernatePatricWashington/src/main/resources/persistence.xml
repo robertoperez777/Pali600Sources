@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<persistence>
+    <persistence-unit name="testjpa" transaction-type="RESOURCE_LOCAL">
+        <provider>
+<!--             org.apache.openjpa.persistence.PersistenceProviderImpl -->
+				org.hibernate.ejb.HibernatePersistence
+        </provider>
+        <non-jta-data-source>java:comp/env/jdbc/tutorialDS</non-jta-data-source>
+        <class>entity.Customer</class>
+        <properties>
+        	<!--
+			<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+			ConnectionDriverName
+			<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+			<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+			<property name="hibernate.connection.username">kep</property>
+			<property name="hibernate.connection.password">kep2012</property>
+			<property name="hibernate.connection.pool_size">2</property>
+			<property name="hibernate.hbm2ddl.auto">update</property>
+			<property name="hibernate.show_sql">true</property>
+	        <property name="hibernate.format_sql">true</property>
+			<property name="hibernate.hbm2ddl.auto">update</property>
+			-->
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">kep2012</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="hibernate.connection.pool_size">2</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">create</property>					
+        </properties>
+    </persistence-unit>
+</persistence>
