@@ -28,10 +28,12 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Names the annotated entity class -->
-<!--         <mapping class="org.javabrains.koushik.dto.Lesson01.UserDetails"/> -->
-<!--         <mapping class="org.javabrains.koushik.dto.Lesson02.UserDetails"/> -->
-<!--         <mapping class="org.javabrains.koushik.dto.Lesson03.UserDetails"/> -->
-		<mapping class="org.javabrains.koushik.dto.Lesson04.UserDetails"/>
+<!--        <mapping class="org.javabrains.koushik.dto.Lesson01.UserDetails"/> -->
+<!--        <mapping class="org.javabrains.koushik.dto.Lesson02.UserDetails"/> -->
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson03.UserDetails"/> -->
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson04.UserDetails"/> -->
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson05.UserDetails"/> -->
+		<mapping class="org.javabrains.koushik.dto.Lesson06.UserDetails"/>
 
     </session-factory>
 
