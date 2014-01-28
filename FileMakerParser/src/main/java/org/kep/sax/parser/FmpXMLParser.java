@@ -25,7 +25,7 @@ public class FmpXMLParser {
 		try {
 			rdr = XMLReaderFactory.createXMLReader();
 			rdr.setContentHandler(new FmpXMLParserHandler());
-			rdr.parse(SAMPLE_XML);		
+			rdr.parse(KARTON_ALL_XML);		
 			FmpXMLParserHandler handler = (FmpXMLParserHandler) rdr.getContentHandler();
 			result = handler.getResult();
 			postProcessing(result);
