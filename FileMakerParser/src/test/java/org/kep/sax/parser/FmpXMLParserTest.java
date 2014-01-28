@@ -12,7 +12,7 @@ public class FmpXMLParserTest {
 		FmpXMLParser parser = new FmpXMLParser();
 		FmpXMLResult result = parser.parseFmpXMl();
 		System.out.println(result);
-		Assert.assertNotNull(result);
+		Assert.assertNotNull(result);		
 	}
 
 }

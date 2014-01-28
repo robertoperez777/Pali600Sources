@@ -37,7 +37,7 @@
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson07.UserDetails"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson08.UserDetails"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson09.UserDetails"/> -->
-		<mapping class="org.javabrains.koushik.dto.Lesson10.UserDetails"/>
+			<mapping class="org.javabrains.koushik.dto.Lesson10.UserDetails"/>
 
     </session-factory>
 
