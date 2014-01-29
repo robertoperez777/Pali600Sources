@@ -54,7 +54,6 @@
 		<mapping class="org.javabrains.koushik.dto.Lesson16.Vehicle"/>
 		<mapping class="org.javabrains.koushik.dto.Lesson16.TwoWheeler"/>
 		<mapping class="org.javabrains.koushik.dto.Lesson16.FourWheeler"/>
-		
     </session-factory>
 
 </hibernate-configuration>
