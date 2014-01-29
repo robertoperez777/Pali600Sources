@@ -29,32 +29,62 @@
 
         <!-- Names the annotated entity class -->
 <!--        <mapping class="org.javabrains.koushik.dto.Lesson01.UserDetails"/> -->
+
 <!--        <mapping class="org.javabrains.koushik.dto.Lesson02.UserDetails"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson03.UserDetails"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson04.UserDetails"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson05.UserDetails"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson06.UserDetails"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson07.UserDetails"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson08.UserDetails"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson09.UserDetails"/> -->
+
 <!--		<mapping class="org.javabrains.koushik.dto.Lesson10.UserDetails"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson11.UserDetails"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson11.Vehicle"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson12.UserDetails"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson12.Vehicle"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson13.UserDetails"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson13.Vehicle"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson14.UserDetails"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson14.Vehicle"/> -->
+
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson15.UserDetails"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson15.Vehicle"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson15.TwoWheeler"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson15.FourWheeler"/> -->
-		<mapping class="org.javabrains.koushik.dto.Lesson16.UserDetails"/>
-		<mapping class="org.javabrains.koushik.dto.Lesson16.Vehicle"/>
-		<mapping class="org.javabrains.koushik.dto.Lesson16.TwoWheeler"/>
-		<mapping class="org.javabrains.koushik.dto.Lesson16.FourWheeler"/>
+
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson16.UserDetails"/> -->
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson16.Vehicle"/> -->
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson16.TwoWheeler"/> -->
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson16.FourWheeler"/> -->
+
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson17.Vehicle"/> -->
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson17.TwoWheeler"/> -->
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson17.FourWheeler"/> -->
+
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson18.Vehicle"/> -->
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson18.TwoWheeler"/> -->
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson18.FourWheeler"/> -->
 		
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson19.UserDetails"/> -->
+			
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson20.UserDetails"/> -->
+			
+<!-- 		<mapping class="org.javabrains.koushik.dto.Lesson21.UserDetails"/> -->
+			
+			<mapping class="org.javabrains.koushik.dto.Lesson22.UserDetails"/>						
     </session-factory>
 
 </hibernate-configuration>
