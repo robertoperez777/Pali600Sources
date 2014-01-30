@@ -77,14 +77,14 @@
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson18.Vehicle"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson18.TwoWheeler"/> -->
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson18.FourWheeler"/> -->
-		
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson19.UserDetails"/> -->
 			
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson20.UserDetails"/> -->
 			
 <!-- 		<mapping class="org.javabrains.koushik.dto.Lesson21.UserDetails"/> -->
 			
-			<mapping class="org.javabrains.koushik.dto.Lesson22.UserDetails"/>						
+			<mapping class="org.javabrains.koushik.dto.Lesson22.UserDetails"/>
+
     </session-factory>
 
 </hibernate-configuration>
