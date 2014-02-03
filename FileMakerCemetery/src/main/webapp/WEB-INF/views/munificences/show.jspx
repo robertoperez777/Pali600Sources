@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_org_kep_cemetery_domain_Munificence" object="${munificence}" path="/munificences" z="Su7jmItrTlDMPRYC25Dq9eQQH7s=">
+        <field:display field="purpose" id="s_org_kep_cemetery_domain_Munificence_purpose" object="${munificence}" z="K22XZKUdM8+G0IgivQ+mM6M8sdU="/>
+        <field:display field="amount" id="s_org_kep_cemetery_domain_Munificence_amount" object="${munificence}" z="i8N8Si1y/332AQlOspJ/UvGdL/E="/>
+        <field:display date="true" dateTimePattern="${munificence_yearofmunificence_date_format}" field="yearOfMunificence" id="s_org_kep_cemetery_domain_Munificence_yearOfMunificence" object="${munificence}" z="9H5r241FODkulJtBB+JcmCnX2A8="/>
+        <field:display field="description" id="s_org_kep_cemetery_domain_Munificence_description" object="${munificence}" z="IpSZhaMbeXe2tKApwNW5kSLeYVA="/>
+    </page:show>
+</div>
