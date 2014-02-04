@@ -76,5 +76,4 @@ public class Munificence {
 	public void setPerson(Person person) {
 		this.person = person;
 	}
-
 }

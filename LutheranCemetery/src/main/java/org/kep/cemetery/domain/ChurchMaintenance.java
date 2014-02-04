@@ -76,5 +76,4 @@ public class ChurchMaintenance {
 	public void setPerson(Person person) {
 		this.person = person;
 	}
-
 }
