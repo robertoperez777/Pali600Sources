@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
 import org.kep.cemetery.domain.Address;
+import org.kep.cemetery.domain.Child;
 import org.kep.cemetery.domain.ChurchMaintenance;
 import org.kep.cemetery.domain.Gender;
 import org.kep.cemetery.domain.Munificence;
@@ -37,6 +38,14 @@ public class LutheranCemeteryTest {
 			person.setBirthDate(new Date());
 			person.setEmailAddress("mail@mail.hu");
 			person.setComment("Megjegyzés");
+			
+			Child child = new Child();
+			child.setName("Tom");
+			child.setBirthDate(new Date());
+			
+			Child child2 = new Child();
+			child2.setName("Jerry");
+			child2.setBirthDate(new Date());
 
 			Address address = new Address();
 			address.setCity("Test city");
@@ -86,6 +95,8 @@ public class LutheranCemeteryTest {
 			person.getChurchMaintenances().add(churchMaintenance2);
 			person.getMunificences().add(munificence);
 			person.getMunificences().add(munificence2);
+			person.getChildren().add(child);
+			person.getChildren().add(child2);
 
 			this.session.save(address);
 			this.session.save(phoneNumber1);
@@ -94,6 +105,8 @@ public class LutheranCemeteryTest {
 			this.session.save(churchMaintenance2);
 			this.session.save(munificence);
 			this.session.save(munificence2);
+			this.session.save(child);
+			this.session.save(child2);
 			this.session.save(person);
 
 			this.transaction.commit();

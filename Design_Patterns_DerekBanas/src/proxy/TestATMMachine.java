@@ -1,5 +1,7 @@
 package proxy;
 
+import state.ATMMachine;
+
 public class TestATMMachine {
 
 	public static void main(String[] args) {
@@ -28,10 +30,9 @@ public class TestATMMachine {
 
 		GetATMData atmProxy = new ATMProxy();
 
-		System.out.println("\nCurrent ATM State " + atmProxy.getATMState());
+		System.out.println("\nCurrent ATM State " + atmProxy.getATMData());
 
-		System.out.println("\nCash in ATM Machine $"
-				+ atmProxy.getCashInMachine());
+		System.out.println("\nCash in ATM Machine $" + atmProxy.getCashInMachine());
 
 		// The user can't perform this action because ATMProxy doesn't
 		// have access to that potentially harmful method

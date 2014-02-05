@@ -31,8 +31,9 @@
        <mapping class="org.kep.cemetery.domain.Address"/>
        <mapping class="org.kep.cemetery.domain.ChurchMaintenance"/>
        <mapping class="org.kep.cemetery.domain.Munificence"/>
-       <mapping class="org.kep.cemetery.domain.Person"/>
        <mapping class="org.kep.cemetery.domain.PhoneNumber"/>
+       <mapping class="org.kep.cemetery.domain.Person"/>
+       <mapping class="org.kep.cemetery.domain.Child"/>
 	</session-factory>
 
 </hibernate-configuration>

@@ -1,5 +1,6 @@
 package proxy;
 
+import state.ATMMachine;
 import state.ATMState;
 
 //In this situation the proxy both creates and destroys
@@ -9,13 +10,10 @@ public class ATMProxy implements GetATMData {
 
 	// Allows the user to access getATMState in the
 	// Object ATMMachine
-
 	@Override
-	public ATMState getATMState() {
-
-		ATMMachine realATMMachine = new ATMMachine();
-
-		return realATMMachine.getATMState();
+	public ATMState getATMData() {
+		ATMMachine realAtmMachine = new ATMMachine();
+		return realAtmMachine.getATMData();
 	}
 
 	// Allows the user to access getCashInMachine

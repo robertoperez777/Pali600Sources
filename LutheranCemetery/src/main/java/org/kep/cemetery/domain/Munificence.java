@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "MUNIFICENCE")
@@ -23,6 +25,7 @@ public class Munificence {
 	@Column(name = "AMOUNT")
 	private BigDecimal amount;
 	@Column(name = "DATE")
+	@Temporal(TemporalType.DATE)
 	private Date date;
 	@Column(name = "DESCRIPTION")
 	private String description;

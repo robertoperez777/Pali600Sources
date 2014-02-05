@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "CHURCH_MAINTENANCE")
@@ -19,6 +21,7 @@ public class ChurchMaintenance {
 	@Column(name = "ID")
 	private long id;
 	@Column(name = "DATE")
+	@Temporal(TemporalType.DATE)
 	private Date date;
 	@Column(name = "PAYMENT_NUMBER")
 	private int paymentNumber;

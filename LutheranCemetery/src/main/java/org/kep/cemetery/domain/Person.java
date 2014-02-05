@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "PERSON")
@@ -28,11 +30,15 @@ public class Person {
 	@Column(name = "MAIDEN_NAME")
 	private String maidenName;
 	@Column(name = "BIRTH_DATE")
+	@Temporal(TemporalType.DATE)
 	private Date birthDate;
 	@Column(name = "MARRIED_NAME")
 	private String marriedName;
 	@Column(name = "COMMENT")
 	private String comment;
+	@OneToMany
+	@JoinTable(name="PERSON_CHILDREN", joinColumns = @JoinColumn(name="PERSON_ID"), inverseJoinColumns = @JoinColumn(name = "CHILD_ID"))
+	private Set<Child> children = new HashSet<Child>();
 	@OneToMany
 	@JoinTable(name = "PERSON_ADDRESS", joinColumns = @JoinColumn(name = "PERSON_ID"), inverseJoinColumns = @JoinColumn(name = "ADDRESS_ID"))
 	private Set<Address> addresses = new HashSet<Address>();
@@ -142,5 +148,13 @@ public class Person {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public Set<Child> getChildren() {
+		return children;
+	}
+
+	public void setChildren(Set<Child> children) {
+		this.children = children;
 	}
 }
