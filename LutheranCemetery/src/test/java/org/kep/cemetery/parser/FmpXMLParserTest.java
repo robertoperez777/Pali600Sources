@@ -19,20 +19,30 @@ public class FmpXMLParserTest {
 	}
 
 	private void printFirstResult(FmpXMLResult result) {
-		for (FmpXMLColumn column : result.getResultSet().getResultSetRow().get(0).getColumns()) {
+		for (FmpXMLColumn column : result.getResultSet().getResultSetRow().get(1).getColumns()) {
 			System.out.println();
-			System.out.println("******************************");
+			System.out.println("************************************************************");
 			System.out.print("ColID: " + column.getColId());
 			System.out.print(" | ");
 			System.out.print("ColumnName: " + column.getColumnName());
 			System.out.println();
-			System.out.println("******************************");			
+			System.out.println("************************************************************");			
 			for(FmpXMLColumnData columnData :column.getColumnDatas()){
-				System.out.print("RowId: " + columnData.getRowId());
-				System.out.print(" | ");
-				System.out.print("Data: " + columnData.getData());
-				System.out.println();
+				if(!isEmpty(columnData.getData())) {
+					System.out.print("RowId: " + columnData.getRowId());
+					System.out.print(" | ");
+					System.out.print("Data: " + columnData.getData());
+					System.out.println();					
+				}
 			}
+		}
+	}
+	
+	private boolean isEmpty(String data) {
+		if(data == null || data.isEmpty()) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 
