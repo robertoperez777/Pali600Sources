@@ -1,6 +1,8 @@
 package state;
 
-public class ATMMachine {
+import proxy.GetATMData;
+
+public class ATMMachine implements GetATMData {
 
 	ATMState hasCard;
 	ATMState noCard;
@@ -14,16 +16,16 @@ public class ATMMachine {
 
 	public ATMMachine() {
 
-		hasCard = new HasCard(this);
-		noCard = new NoCard(this);
-		hasCorrectPin = new HasPin(this);
-		atmOutOfMoney = new NoCash(this);
+		this.hasCard = new HasCard(this);
+		this.noCard = new NoCard(this);
+		this.hasCorrectPin = new HasPin(this);
+		this.atmOutOfMoney = new NoCash(this);
 
-		atmState = noCard;
+		this.atmState = this.noCard;
 
-		if (cashInMachine < 0) {
+		if (this.cashInMachine < 0) {
 
-			atmState = atmOutOfMoney;
+			this.atmState = this.atmOutOfMoney;
 
 		}
 
@@ -31,54 +33,64 @@ public class ATMMachine {
 
 	void setATMState(ATMState newATMState) {
 
-		atmState = newATMState;
+		this.atmState = newATMState;
 
 	}
 
 	public void setCashInMachine(int newCashInMachine) {
 
-		cashInMachine = newCashInMachine;
+		this.cashInMachine = newCashInMachine;
 
 	}
 
 	public void insertCard() {
 
-		atmState.insertCard();
+		this.atmState.insertCard();
 
 	}
 
 	public void ejectCard() {
 
-		atmState.ejectCard();
+		this.atmState.ejectCard();
 
 	}
 
 	public void requestCash(int cashToWithdraw) {
 
-		atmState.requestCash(cashToWithdraw);
+		this.atmState.requestCash(cashToWithdraw);
 
 	}
 
 	public void insertPin(int pinEntered) {
 
-		atmState.insertPin(pinEntered);
+		this.atmState.insertPin(pinEntered);
 
 	}
 
 	public ATMState getYesCardState() {
-		return hasCard;
+		return this.hasCard;
 	}
 
 	public ATMState getNoCardState() {
-		return noCard;
+		return this.noCard;
 	}
 
 	public ATMState getHasPin() {
-		return hasCorrectPin;
+		return this.hasCorrectPin;
 	}
 
 	public ATMState getNoCashState() {
-		return atmOutOfMoney;
+		return this.atmOutOfMoney;
+	}
+
+	@Override
+	public int getCashInMachine() {
+		return this.cashInMachine;
+	}
+
+	@Override
+	public ATMState getATMData() {
+		return this.atmState;
 	}
 
 }

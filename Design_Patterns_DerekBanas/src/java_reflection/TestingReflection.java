@@ -117,16 +117,14 @@ public class TestingReflection {
 			// parameter new Class[]{String.class}
 			// For others use int.class, double.class, etc.
 
-			constructor = reflectClass
-					.getConstructor(new Class[] { EnemyShipFactory.class });
+			constructor = reflectClass.getConstructor(new Class[] { EnemyShipFactory.class });
 
 			// Call a constructor by passing parameters to create an object
 
-			constructor2 = reflectClass.getConstructor(int.class, String.class)
-					.newInstance(12, "Random String");
+			constructor2 = reflectClass.getConstructor(int.class, String.class).newInstance(12, "Random String");
 		}
 
-		catch (NoSuchMethodException | SecurityException e) {
+		catch (NoSuchMethodException e) {
 			// Exceptions thrown
 			e.printStackTrace();
 		} catch (InstantiationException e) {
@@ -165,11 +163,19 @@ public class TestingReflection {
 
 		}
 
-		catch (InstantiationException | IllegalAccessException
-				| IllegalArgumentException | InvocationTargetException e) {
+		catch (InstantiationException e) {
 
 			e.printStackTrace();
 
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		// Now I can call methods in the UFOEnemyShip Object
@@ -200,8 +206,7 @@ public class TestingReflection {
 
 			// Get the value of a field and store it in a String
 
-			String valueOfName = (String) privateStringName
-					.get(enemyshipPrivate);
+			String valueOfName = (String) privateStringName.get(enemyshipPrivate);
 
 			System.out.println("EnemyShip Private Name: " + valueOfName);
 
@@ -213,8 +218,7 @@ public class TestingReflection {
 
 			String methodName = "getPrivate";
 
-			Method privateMethod = UFOEnemyShip.class.getDeclaredMethod(
-					methodName, null);
+			Method privateMethod = UFOEnemyShip.class.getDeclaredMethod(methodName, null);
 
 			// Shuts down security allowing you to access private methods
 
@@ -222,8 +226,7 @@ public class TestingReflection {
 
 			// get the return value from the method
 
-			String privateReturnVal = (String) privateMethod.invoke(
-					enemyshipPrivate, null);
+			String privateReturnVal = (String) privateMethod.invoke(enemyshipPrivate, null);
 
 			System.out.println("EnemyShip Private Method: " + privateReturnVal);
 
@@ -235,14 +238,12 @@ public class TestingReflection {
 
 			// Provide the parameters above with values
 
-			Object[] params = new Object[] { new Integer(10),
-					new String("Random") };
+			Object[] params = new Object[] { new Integer(10), new String("Random") };
 
 			// Get the method by providing its name and a Class array with
 			// parameters
 
-			privateMethod = UFOEnemyShip.class.getDeclaredMethod(
-					"getOtherPrivate", methodParameters);
+			privateMethod = UFOEnemyShip.class.getDeclaredMethod("getOtherPrivate", methodParameters);
 
 			// Shuts down security allowing you to access private methods
 
@@ -251,15 +252,13 @@ public class TestingReflection {
 			// Execute the method and pass parameter values. The return value is
 			// stored
 
-			privateReturnVal = (String) privateMethod.invoke(enemyshipPrivate,
-					params);
+			privateReturnVal = (String) privateMethod.invoke(enemyshipPrivate, params);
 
-			System.out.println("EnemyShip Other Private Method: "
-					+ privateReturnVal);
+			System.out.println("EnemyShip Other Private Method: " + privateReturnVal);
 
 		}
 
-		catch (NoSuchFieldException | SecurityException e) {
+		catch (NoSuchFieldException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -285,5 +284,4 @@ public class TestingReflection {
 		}
 
 	}
-
 }
