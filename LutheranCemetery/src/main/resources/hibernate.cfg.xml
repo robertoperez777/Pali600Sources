@@ -34,5 +34,5 @@
        <mapping class="org.kep.cemetery.domain.Person"/>
        <mapping class="org.kep.cemetery.domain.PhoneNumber"/>
 	</session-factory>
-	
+
 </hibernate-configuration>
