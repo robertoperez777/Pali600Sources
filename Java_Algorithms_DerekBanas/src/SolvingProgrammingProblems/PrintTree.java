@@ -23,7 +23,7 @@ public class PrintTree {
 
 			for (int l = indexToPrint; l < maxIndexToPrint; l++) {
 
-				System.out.print(theHeap[l].key);
+//				System.out.print(theHeap[l].key);
 
 				for (int k = 0; k < spaces; k++) {
 					System.out.print(" ");

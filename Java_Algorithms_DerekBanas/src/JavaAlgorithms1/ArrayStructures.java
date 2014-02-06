@@ -180,6 +180,12 @@ public class ArrayStructures {
 
 	}
 
+	private void swapValues(int indexOne, int indexTwo) {
+		int temp = theArray[indexOne];
+		theArray[indexOne] = theArray[indexTwo];
+		theArray[indexTwo] = temp;
+	}
+
 	public static void main(String[] args) {
 
 		ArrayStructures newArray = new ArrayStructures();

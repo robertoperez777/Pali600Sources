@@ -9,90 +9,98 @@ public class ShellSort {
 		int inner, outer, temp;
 
 		int interval = 1;
-		while (interval <= (this.arraySize / 3)){
+		while (interval <= (this.arraySize / 3)) {
 
 			// Define an interval sequence
 
 			interval = (interval * 3) + 1;
 
-		// Keep looping until the interval is 1
-		// Then this becomes an insertion sort
+			// Keep looping until the interval is 1
+			// Then this becomes an insertion sort
 
-		while (interval > 0) {
+			while (interval > 0) {
 
-			// Continue incrementing outer until the end of the array is reached
+				// Continue incrementing outer until the end of the array is
+				// reached
 
-			for (outer = interval; outer < this.arraySize; outer++) {
+				for (outer = interval; outer < this.arraySize; outer++) {
 
-				// Store the value of the array in temp unless it has to be
-				// copied to a space occupied by a bigger number closer to the
-				// beginning of the array
+					// Store the value of the array in temp unless it has to be
+					// copied to a space occupied by a bigger number closer to
+					// the
+					// beginning of the array
 
-				temp = this.theArray[outer];
+					temp = this.theArray[outer];
 
-				System.out.println("Copy " + this.theArray[outer] + " into temp");
+					System.out.println("Copy " + this.theArray[outer]
+							+ " into temp");
 
-				// inner is assigned the value of the highest index to check
-				// against all values the proceed it. Along the way if a
-				// number is greater than temp it will be moved up in the array
+					// inner is assigned the value of the highest index to check
+					// against all values the proceed it. Along the way if a
+					// number is greater than temp it will be moved up in the
+					// array
 
-				inner = outer;
+					inner = outer;
 
-				System.out.println("Checking if " + this.theArray[inner - interval]
-						+ " in index " + (inner - interval)
-						+ " is bigger than " + temp);
-
-				// While there is a number bigger than temp move it further
-				// up in the array
-
-				while ((inner > (interval - 1))
-						&& (this.theArray[inner - interval] >= temp)) {
-
-					System.out.println("In While Checking if "
+					System.out.println("Checking if "
 							+ this.theArray[inner - interval] + " in index "
 							+ (inner - interval) + " is bigger than " + temp);
 
+					// While there is a number bigger than temp move it further
+					// up in the array
+
+					while ((inner > (interval - 1))
+							&& (this.theArray[inner - interval] >= temp)) {
+
+						System.out.println("In While Checking if "
+								+ this.theArray[inner - interval]
+								+ " in index " + (inner - interval)
+								+ " is bigger than " + temp);
+
+						this.printHorzArray(inner, outer, interval);
+
+						// Make room for the smaller temp by moving values in
+						// the
+						// array
+						// up one space if they are greater than temp
+
+						this.theArray[inner] = this.theArray[inner - interval];
+
+						System.out.println(this.theArray[inner - interval]
+								+ " moved to index " + inner);
+
+						inner -= interval;
+
+						System.out.println("inner= " + inner);
+
+						this.printHorzArray(inner, outer, interval);
+
+						System.out.println("outer= " + outer);
+						System.out.println("temp= " + temp);
+						System.out.println("interval= " + interval);
+
+					}
+
+					// Now that everything has been moved into place put the
+					// value
+					// stored in temp into the index above the first value
+					// smaller
+					// than it is
+
+					this.theArray[inner] = temp;
+
+					System.out.println(temp + " moved to index " + inner);
+
 					this.printHorzArray(inner, outer, interval);
-
-					// Make room for the smaller temp by moving values in the
-					// array
-					// up one space if they are greater than temp
-
-					this.theArray[inner] = this.theArray[inner - interval];
-
-					System.out.println(this.theArray[inner - interval]
-							+ " moved to index " + inner);
-
-					inner -= interval;
-
-					System.out.println("inner= " + inner);
-
-					this.printHorzArray(inner, outer, interval);
-
-					System.out.println("outer= " + outer);
-					System.out.println("temp= " + temp);
-					System.out.println("interval= " + interval);
 
 				}
 
-				// Now that everything has been moved into place put the value
-				// stored in temp into the index above the first value smaller
-				// than it is
+				// Once we get here we have interval sorted our array
+				// so we decrement interval and go again
 
-				this.theArray[inner] = temp;
-
-				System.out.println(temp + " moved to index " + inner);
-
-				this.printHorzArray(inner, outer, interval);
-
+				interval = (interval - 1) / 3;
 			}
-
-			// Once we get here we have interval sorted our array
-			// so we decrement interval and go again
-
-			interval = (interval - 1) / 3;
 		}
-
 	}
 
 	public static void main(String[] args) {
