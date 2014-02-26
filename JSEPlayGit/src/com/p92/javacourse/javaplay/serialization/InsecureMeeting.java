@@ -22,9 +22,9 @@ public class InsecureMeeting implements Serializable // NOTE: It should implemen
 	private static final long serialVersionUID = 1L;
 	
 	/** Start of the meeting */
-	private Date start;
+	private final Date start;
 	/** End of the meeting */
-	private Date end;
+	private final Date end;
 	
 	/**
 	 * NOTE: secure the member variables.

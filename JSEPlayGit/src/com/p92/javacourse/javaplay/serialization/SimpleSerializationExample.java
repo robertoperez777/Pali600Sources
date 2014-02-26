@@ -13,12 +13,17 @@ import java.io.Serializable;
 
 /**
  * A simple serialization example.
- * It serializes an object and stores it in the ./tmp/SimpleSerializationExample.bin file then
+ * It serializes an object and stores it in the {@value #FILE} file then
  * deserialize it and prints the class name of the oject on the standard output.
  * @author BagyuraI
  */
 public class SimpleSerializationExample 
 {
+	/**
+	 * Path of the file we serialize into.
+	 */
+	private static final String FILE = "./tmp/SimpleSerializationExample.bin" ;
+	
 	/** 
 	 * A serializable class
 	 * @author BagyuraI
@@ -26,9 +31,35 @@ public class SimpleSerializationExample
 	private static class CustomType implements Serializable
 	{
 		/**
+		 * A simple final field. It will be serialized.
+		 */
+		private final int i;
+		
+		/**
 		 * Serial version unique identifier.
 		 */
 		private static final long serialVersionUID = 1L;
+		
+		/**
+		 * Creates a CustomType instance with the given number
+		 * @param i
+		 */
+		public CustomType(int i) 
+		{
+			super();
+			this.i = i;
+		}
+
+		/**
+		 * Returns with the i.
+		 * @return the value of the {@link #i} field
+		 */
+		public int getI() 
+		{
+			return i;
+		}
+		
+		
 		
 	}
 	
@@ -41,10 +72,10 @@ public class SimpleSerializationExample
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException 
 	{
-		
-		serialize( new CustomType() );
+		serialize( new CustomType( 34 ) );
 		Object o = deserialize();
-		System.out.println( o.getClass().getName() );
+		CustomType ct = (CustomType)o;
+		System.out.println( ct.getI() );
 	}
 
 
@@ -57,7 +88,7 @@ public class SimpleSerializationExample
 	 */
 	private static void serialize( Serializable o) throws FileNotFoundException, IOException 
 	{
-		try ( ObjectOutputStream out = new ObjectOutputStream( new FileOutputStream( "./tmp/SimpleSerializationExample.bin" ) );)
+		try ( ObjectOutputStream out = new ObjectOutputStream( new FileOutputStream( FILE ) );)
 		{
 			out.writeObject( o );
 		}
@@ -72,7 +103,7 @@ public class SimpleSerializationExample
 	 */
 	private static Object deserialize() throws FileNotFoundException, IOException, ClassNotFoundException 
 	{
-		try ( ObjectInputStream out = new ObjectInputStream( new FileInputStream( "./tmp/SimpleSerializationExample.bin" ) );)
+		try ( ObjectInputStream out = new ObjectInputStream( new FileInputStream( FILE ) );)
 		{
 			return out.readObject();
 		}

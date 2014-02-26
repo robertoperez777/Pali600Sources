@@ -46,12 +46,13 @@ public class SerializationProxyPatternApp
 		@Override
 		public String toString(){ return "A{a=" + a + "}";}
 		
-		// NOTE: Use an instance of SerializableProxy instead of the real object.
+		// NOTE: Use an instance of SerializationProxy instead of the real object.
 		//       So this class will never be serialized ( the proxy will be all times)
 		private Object writeReplace()
 		{
-			System.out.println( "A.writeReplace() is using a proxy." );
-			return new SerializableProxy( this );
+			SerializationProxy serialize = new SerializationProxy( this );
+			System.out.println( "A.writeReplace() is using a proxy: " + serialize);
+			return serialize;
 		}
 		
 		// NOTE: an attacker might fabricate one in an attempt to violate the class’s invariants. 
@@ -64,7 +65,7 @@ public class SerializationProxyPatternApp
 
 		// NOTE the private static serializable proxy inner class.
 		// 		It should also implement Serializable
-		private static class SerializableProxy implements Serializable
+		private static class SerializationProxy implements Serializable
 		{
 			// NOTE: serial version id.
 			private static final long serialVersionUID = 1L;
@@ -74,16 +75,20 @@ public class SerializationProxyPatternApp
 			private final String a;
 			
 			// NOTE: the constructor get a parameter of the enclosing class.
-			private SerializableProxy( A a )
+			private SerializationProxy( A a )
 			{
 				this.a = a.a;
 			}
 			// NOTE: reading the proxy from the stream should return a real object, not the proxy
 			private Object readResolve()
 			{
-				System.out.println( "SerializableProxy.readResolve() is returning a real object." );
-				return new A( a );
+				A deserialized = new A( a );
+				System.out.println( "SerializationProxy.readResolve() is returning a real object: " + deserialized );
+				return deserialized;
 			}
+			
+			@Override
+			public String toString(){ return "SerializationProxy{a=" + a + "}";}
 		}
 	}
 	
@@ -99,7 +104,7 @@ public class SerializationProxyPatternApp
 		A a = new A( "aa" );
 		serialize( a );
 		Object o = deserialize();
-		System.out.println( o );
+		System.out.println( "The deserialized object: " + o );
 	}
 
 
