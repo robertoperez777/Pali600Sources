@@ -23,8 +23,10 @@ public class Person {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
 	private long id;
-	@Column(name = "NAME")
-	private String name;
+	@Column(name = "MALE_NAME")
+	private String maleName;
+	@Column(name = "FEMALE_NAME")
+	private String femaleName;
 	@Column(name = "EMAIL_ADDRESS")
 	private String emailAddress;
 	@Column(name = "MAIDEN_NAME")
@@ -32,8 +34,6 @@ public class Person {
 	@Column(name = "BIRTH_DATE")
 	@Temporal(TemporalType.DATE)
 	private Date birthDate;
-	@Column(name = "MARRIED_NAME")
-	private String marriedName;
 	@Column(name = "COMMENT")
 	private String comment;
 	@OneToMany
@@ -48,18 +48,26 @@ public class Person {
 	@JoinTable(name = "PERSON_PHONE_NUMBER", joinColumns = @JoinColumn(name = "PERSON_ID"), inverseJoinColumns = @JoinColumn(name = "PHONE_NUMBER_ID"))
 	private Set<PhoneNumber> phoneNumbers = new HashSet<PhoneNumber>();
 	@OneToMany
-	@JoinTable(name = "PERSON_CHURCH_MAINTENANCE", joinColumns = @JoinColumn(name = "PERSON_ID"), inverseJoinColumns = @JoinColumn(name = "CHURCH_MAINTENANCE_ID"))
-	private Set<ChurchMaintenance> churchMaintenances = new HashSet<ChurchMaintenance>();
+	@JoinTable(name = "PERSON_CONTRIBUTION", joinColumns = @JoinColumn(name = "PERSON_ID"), inverseJoinColumns = @JoinColumn(name = "CONTRIBUTION_ID"))
+	private Set<Contribution> contributions = new HashSet<Contribution>();
 	@OneToMany
 	@JoinTable(name = "PERSON_MUNIFICENCE", joinColumns = @JoinColumn(name = "PERSON_ID"), inverseJoinColumns = @JoinColumn(name = "MUNIFICENCE_ID"))
 	private Set<Munificence> munificences = new HashSet<Munificence>();
 
-	public String getName() {
-		return this.name;
+	public String getFemaleName() {
+		return femaleName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFemaleName(String femaleName) {
+		this.femaleName = femaleName;
+	}
+
+	public String getMaleName() {
+		return maleName;
+	}
+
+	public void setMaleName(String maleName) {
+		this.maleName = maleName;
 	}
 
 	public String getEmailAddress() {
@@ -84,14 +92,6 @@ public class Person {
 
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
-	}
-
-	public String getMarriedName() {
-		return this.marriedName;
-	}
-
-	public void setMarriedName(String marriedName) {
-		this.marriedName = marriedName;
 	}
 
 	public String getComment() {
@@ -126,14 +126,6 @@ public class Person {
 		this.phoneNumbers = phoneNumbers;
 	}
 
-	public Set<ChurchMaintenance> getChurchMaintenances() {
-		return this.churchMaintenances;
-	}
-
-	public void setChurchMaintenances(Set<ChurchMaintenance> churchMaintenances) {
-		this.churchMaintenances = churchMaintenances;
-	}
-
 	public Set<Munificence> getMunificences() {
 		return this.munificences;
 	}
@@ -156,5 +148,13 @@ public class Person {
 
 	public void setChildren(Set<Child> children) {
 		this.children = children;
+	}
+
+	public Set<Contribution> getContributions() {
+		return contributions;
+	}
+
+	public void setContributions(Set<Contribution> contributions) {
+		this.contributions = contributions;
 	}
 }

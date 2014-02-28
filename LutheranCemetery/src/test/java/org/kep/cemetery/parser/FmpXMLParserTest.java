@@ -19,7 +19,7 @@ public class FmpXMLParserTest {
 	}
 
 	private void printFirstResult(FmpXMLResult result) {
-		for (FmpXMLColumn column : result.getResultSet().getResultSetRow().get(1).getColumns()) {
+		for (FmpXMLColumn column : result.getResultSet().getResultSetRow().get(3).getColumns()) {
 			System.out.println();
 			System.out.println("************************************************************");
 			System.out.print("ColID: " + column.getColId());

@@ -29,7 +29,7 @@
 
         <!-- Names the annotated entity class -->
        <mapping class="org.kep.cemetery.domain.Address"/>
-       <mapping class="org.kep.cemetery.domain.ChurchMaintenance"/>
+       <mapping class="org.kep.cemetery.domain.Contribution"/>
        <mapping class="org.kep.cemetery.domain.Munificence"/>
        <mapping class="org.kep.cemetery.domain.PhoneNumber"/>
        <mapping class="org.kep.cemetery.domain.Person"/>

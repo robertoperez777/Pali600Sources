@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.kep.cemetery.domain.Address;
 import org.kep.cemetery.domain.Child;
-import org.kep.cemetery.domain.ChurchMaintenance;
+import org.kep.cemetery.domain.Contribution;
 import org.kep.cemetery.domain.Gender;
 import org.kep.cemetery.domain.Munificence;
 import org.kep.cemetery.domain.Person;
@@ -32,8 +32,7 @@ public class LutheranCemeteryTest {
 		try {
 			this.transaction = this.session.beginTransaction();
 			Person person = new Person();
-			person.setName("Gipsz Jánosné");
-			person.setMarriedName("Nemtudom Jutka");
+			person.setMaleName("Gipsz Jánosné");
 			person.setGender(Gender.FEMALE);
 			person.setBirthDate(new Date());
 			person.setEmailAddress("mail@mail.hu");
@@ -60,19 +59,19 @@ public class LutheranCemeteryTest {
 			phoneNumber2.setPhoneNumber("06201234667");
 			phoneNumber1.setPerson(person);
 
-			ChurchMaintenance churchMaintenance = new ChurchMaintenance();
-			churchMaintenance.setAmount(new BigDecimal(5000));
-			churchMaintenance.setDate(new Date());
-			churchMaintenance.setDescription("Egyház fentartás");
-			churchMaintenance.setPaymentNumber(12);
-			churchMaintenance.setPerson(person);
+			Contribution contribution = new Contribution();			
+			contribution.setAmount(new BigDecimal(5000));
+			contribution.setDate(new Date());
+			contribution.setDescription("Hozzájárulás");
+			contribution.setPaymentNumber(12);
+			contribution.setPerson(person);
 
-			ChurchMaintenance churchMaintenance2 = new ChurchMaintenance();
-			churchMaintenance2.setAmount(new BigDecimal(6000));
-			churchMaintenance2.setDate(new Date());
-			churchMaintenance2.setDescription("Egyház fentartás 2");
-			churchMaintenance2.setPaymentNumber(13);
-			churchMaintenance2.setPerson(person);
+			Contribution contribution2 = new Contribution();
+			contribution2.setAmount(new BigDecimal(6000));
+			contribution2.setDate(new Date());
+			contribution2.setDescription("Hozzájárulás 2");
+			contribution2.setPaymentNumber(13);
+			contribution2.setPerson(person);
 
 			Munificence munificence = new Munificence();
 			munificence.setAmount(new BigDecimal(6000));
@@ -91,8 +90,8 @@ public class LutheranCemeteryTest {
 			person.getAddresses().add(address);
 			person.getPhoneNumbers().add(phoneNumber1);
 			person.getPhoneNumbers().add(phoneNumber2);
-			person.getChurchMaintenances().add(churchMaintenance);
-			person.getChurchMaintenances().add(churchMaintenance2);
+			person.getContributions().add(contribution);
+			person.getContributions().add(contribution2);
 			person.getMunificences().add(munificence);
 			person.getMunificences().add(munificence2);
 			person.getChildren().add(child);
@@ -101,8 +100,8 @@ public class LutheranCemeteryTest {
 			this.session.save(address);
 			this.session.save(phoneNumber1);
 			this.session.save(phoneNumber2);
-			this.session.save(churchMaintenance);
-			this.session.save(churchMaintenance2);
+			this.session.save(contribution);
+			this.session.save(contribution2);
 			this.session.save(munificence);
 			this.session.save(munificence2);
 			this.session.save(child);
