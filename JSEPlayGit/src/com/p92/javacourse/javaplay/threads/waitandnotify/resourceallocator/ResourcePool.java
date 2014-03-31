@@ -57,7 +57,8 @@ public class ResourcePool
 			// Wait for them.
 			try 
 			{ 
-				wait(); 
+				wait();
+				System.out.println( thread + " resumed" );
 			}
 			catch( InterruptedException ex ) 
 			{ 
