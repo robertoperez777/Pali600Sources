@@ -82,7 +82,6 @@ public class WordCounter
 		{
 			e.printStackTrace();
 		}
-		
-		
+				
 	}
 }

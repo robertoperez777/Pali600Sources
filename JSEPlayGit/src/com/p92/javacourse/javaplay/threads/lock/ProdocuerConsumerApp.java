@@ -13,7 +13,6 @@ package com.p92.javacourse.javaplay.threads.lock;
  */
 public class ProdocuerConsumerApp
 {
-
 	/**
 	 * Static entry point of the application.
 	 * @param args Application arguments. Not used atm.
@@ -28,5 +27,4 @@ public class ProdocuerConsumerApp
 		new Consumer( queue );
 		
 	}
-
 }

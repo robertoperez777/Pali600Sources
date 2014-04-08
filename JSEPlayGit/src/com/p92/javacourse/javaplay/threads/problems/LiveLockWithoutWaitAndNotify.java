@@ -92,8 +92,6 @@ public class LiveLockWithoutWaitAndNotify
 				wife.eathWith(spoon, husband);
 			}
 			
-		}).start();
-		
+		}).start();		
 	}
-
 }

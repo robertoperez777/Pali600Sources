@@ -38,5 +38,5 @@ public class NonAsynchExecutor implements Executor
 			@Override
 			public void run() { System.out.println( "Hello World!" ); }
 		});
-	}
+	}	
 }

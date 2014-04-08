@@ -84,9 +84,7 @@ public class MonitorMyThread
 			}
 			
 		}
-
-		
-
+	
 		
 	}
 

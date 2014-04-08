@@ -157,5 +157,5 @@ public class BlockingQueueExample
 		new Thread( new Producer( "Producer2", queue,  new String[]{ "c" , "xx" , "z"}  ) ).start();
 		new Thread( new Consumer( "Consumer1", queue ) ).start();
 	}
-
+	
 }

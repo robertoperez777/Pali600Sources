@@ -32,7 +32,7 @@ public class Queue
 	/**
 	 * Items in the queue.
 	 */
-	private final Object[] items = new Object[10];
+	private final Object[] items = new Object[1];
 	/**
 	 * Points to the subject of the put operation.
 	 */
@@ -100,7 +100,6 @@ public class Queue
 		try
 		{
 			// While the queue is empty sleep this thread.
-			// We will sleep until it is not empty
 			while (count == 0)
 				notEmpty.await();
 			

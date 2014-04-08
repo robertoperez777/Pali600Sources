@@ -64,8 +64,7 @@ public class ScheduledExecutorServiceExample
 		final ScheduledFuture<?> cancelTaskHandler = scheduler.schedule( cancelTask1Task, 10, TimeUnit.SECONDS );
 		cancelTaskHandler.get();
 		System.out.println( "Task1.isDone: " + task1Handler.isDone() + ", Task1.isCancelled: " + task1Handler.isCancelled() );
-		
-		
+				
 	}
 
 }

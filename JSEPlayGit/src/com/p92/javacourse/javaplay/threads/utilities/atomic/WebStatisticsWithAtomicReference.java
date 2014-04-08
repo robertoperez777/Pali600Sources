@@ -104,4 +104,5 @@ public class WebStatisticsWithAtomicReference
 		}
 		print( "Final stats: " + stats );
 	}
+	
 }

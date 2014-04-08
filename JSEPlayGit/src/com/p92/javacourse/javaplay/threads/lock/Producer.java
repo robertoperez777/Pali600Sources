@@ -3,8 +3,6 @@
  */
 package com.p92.javacourse.javaplay.threads.lock;
 
-import java.util.Random;
-
 /**
  * Producer that puts a value into the queue continuously.
  * @author BagyuraI
@@ -33,20 +31,13 @@ public class Producer implements Runnable
 	@Override
 	public void run()
 	{
-		int o = 0;
-		Random rnd = new Random();
+		int i = 0;
 		while ( true )
 		{
 			try
 			{
-				for ( int i = 0 ; i < rnd.nextInt(3) + 1 ; i++ )
-				{
-					// Put objects into the queue.
-					queue.put( new Integer( o++ ) );
-				}
-				
-				// Put some randomness here.
-				Thread.sleep( rnd.nextInt( 1000 ));
+				// Put objects into the queue.
+				queue.put( new Integer( i++ ) );	
 			}
 			catch (Exception e)
 			{

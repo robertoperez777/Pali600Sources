@@ -155,5 +155,6 @@ public class ATMWithAtomicUpdater
 		for ( int i = 0; i < 10; i++ )
 			new Thread( new ATMUser( acc ) ).start();
 	}
+
 	
 }
