@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_org_kep_filemakerparser_domain_PhoneNumber" object="${phonenumber}" path="/phonenumbers" z="EP0AWAqBvLTZeRZuj2ALDKK7zaw=">
-        <field:display field="phoneNumber" id="s_org_kep_filemakerparser_domain_PhoneNumber_phoneNumber" object="${phonenumber}" z="afAW+yLbgrxhYARbdJ6pjxdTjaA="/>
-        <field:display field="person" id="s_org_kep_filemakerparser_domain_PhoneNumber_person" object="${phonenumber}" z="oWpVFqLP96GfeNvfxz/MRXFiqWU="/>
-    </page:show>
-</div>
