@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="io/xfiles/" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libraries/javassist-3.20.0-GA.jar"/>
+	<classpathentry kind="lib" path="libraries/org.eclipse.swt.cocoa.macosx.x86_64-4.3.jar"/>
+	<classpathentry kind="lib" path="libraries/xom-1.2.5.jar"/>
+	<classpathentry kind="lib" path="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/javaws.jar"/>
+	<classpathentry kind="lib" path="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/lib/tools.jar"/>
+	<classpathentry kind="lib" path="libraries/apt-mirror-api-0.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
